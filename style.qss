@@ -1,0 +1,46 @@
+/* Style global */
+QWidget {
+    background-color: #00246B;
+    color:  #CADCFC;
+    font-size: 10px;
+    font-family: Arial, sans-serif;
+}
+
+/* Boutons */
+QPushButton {
+    background-color: #444;
+    border: 1px solid #666;
+    border-radius: 8px;
+    padding: 8px;
+    color: white;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #555;
+}
+
+QPushButton:pressed {
+    background-color: #222;
+}
+
+/* Labels */
+QLabel {
+    font-size: 10px;
+    font-weight: bold;
+    color: #CADCFC
+
+/* Liste des tests */
+QListWidget {
+    background-color: #333;
+    border: 1px solid #444;
+}
+
+QListWidget::item {
+    background-color: #3a3a3a;
+    color: white;
+}
+
+QListWidget::item:selected {
+    background-color: #555;
+}
