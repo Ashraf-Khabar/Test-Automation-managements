@@ -1,0 +1,7 @@
+datasources:4865fd22ab4cf79605af94f0d3b75e092fda1a8b
+commandlineoptions:9f8598a690c7367accf83ead504756ddd374acc9
+suitesfrom:no-suites-from-option
+file:c4e776dcd0bbcece84868627dd1138beb7e59b66
+--suite Suites.01 Test One copy 2
+--suite Suites.01 Test One copy 4
+--suite Suites.01 Test One copy 3

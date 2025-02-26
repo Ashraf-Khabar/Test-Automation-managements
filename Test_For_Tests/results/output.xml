@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Rebot 7.0 (Python 3.12.3 on win32)" generated="2025-02-26T08:25:41.628353" rpa="false" schemaversion="5">
+<suite id="s1" name="Suites">
+<suite id="s1-s1" name="01 Test One copy 2" source="C:\Users\khaba\OneDrive\Bureau\PY\Test-Automation-managements\Test_For_Tests\01_Test_One copy 2.robot">
+<test id="s1-s1-t1" name="Test Recherche Wikipedia" line="12">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-26T08:25:12.867611" level="INFO">Opening browser 'Chrome' to base url 'https://www.wikipedia.org/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-26T08:25:12.867611" elapsed="5.895524"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-26T08:25:18.763135" elapsed="0.071140"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SEARCH_FIELD}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-26T08:25:18.835149" elapsed="0.055092"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-26T08:25:18.892230" level="INFO">Typing text 'Robot Framework' into text field 'name=search'.</msg>
+<arg>${SEARCH_FIELD}</arg>
+<arg>Robot Framework</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-26T08:25:18.892230" elapsed="0.333380"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-26T08:25:19.225610" level="INFO">Clicking element 'xpath=//button[@type='submit']'.</msg>
+<arg>${SEARCH_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-26T08:25:19.225610" elapsed="1.415473"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${RESULT_TITLE}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-26T08:25:20.641083" elapsed="0.169311"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2025-02-26T08:25:20.861237" level="INFO">Element 'id=firstHeading' contains text 'Robot Framework'.</msg>
+<arg>${RESULT_TITLE}</arg>
+<arg>Robot Framework</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2025-02-26T08:25:20.810394" elapsed="0.052617"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-26T08:25:20.863011" elapsed="2.406265"/>
+</kw>
+<status status="PASS" start="2025-02-26T08:25:12.865592" elapsed="10.405056"/>
+</test>
+<status status="PASS" start="2025-02-26T08:25:12.217000" elapsed="11.053495"/>
+</suite>
+<suite id="s1-s2" name="01 Test One copy 4" source="C:\Users\khaba\OneDrive\Bureau\PY\Test-Automation-managements\Test_For_Tests\01_Test_One copy 4.robot">
+<test id="s1-s2-t1" name="Test Recherche Wikipedia" line="12">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-26T08:25:12.867611" level="INFO">Opening browser 'Chrome' to base url 'https://www.wikipedia.org/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-26T08:25:12.867611" elapsed="4.906374"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-26T08:25:17.774924" elapsed="1.060225"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SEARCH_FIELD}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-26T08:25:18.835149" elapsed="0.057081"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-26T08:25:18.892230" level="INFO">Typing text 'Robot Framework' into text field 'name=search'.</msg>
+<arg>${SEARCH_FIELD}</arg>
+<arg>Robot Framework</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-26T08:25:18.892230" elapsed="0.262358"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-26T08:25:19.157215" level="INFO">Clicking element 'xpath=//button[@type='submit']'.</msg>
+<arg>${SEARCH_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-26T08:25:19.154588" elapsed="1.612921"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${RESULT_TITLE}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-26T08:25:20.767509" elapsed="0.274978"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2025-02-26T08:25:21.105561" level="INFO">Element 'id=firstHeading' contains text 'Robot Framework'.</msg>
+<arg>${RESULT_TITLE}</arg>
+<arg>Robot Framework</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2025-02-26T08:25:21.042487" elapsed="0.063074"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-26T08:25:21.105561" elapsed="2.355985"/>
+</kw>
+<status status="PASS" start="2025-02-26T08:25:12.861931" elapsed="10.599615"/>
+</test>
+<status status="PASS" start="2025-02-26T08:25:12.217153" elapsed="11.246411"/>
+</suite>
+<suite id="s1-s3" name="01 Test One copy 3" source="C:\Users\khaba\OneDrive\Bureau\PY\Test-Automation-managements\Test_For_Tests\01_Test_One copy 3.robot">
+<test id="s1-s3-t1" name="Test Recherche Wikipedia" line="12">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-26T08:25:29.461071" level="INFO">Opening browser 'Chrome' to base url 'https://www.wikipedia.org/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-26T08:25:29.461071" elapsed="3.437826"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-26T08:25:32.901040" elapsed="0.057821"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SEARCH_FIELD}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-26T08:25:32.958861" elapsed="0.039547"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-26T08:25:33.002207" level="INFO">Typing text 'Robot Framework' into text field 'name=search'.</msg>
+<arg>${SEARCH_FIELD}</arg>
+<arg>Robot Framework</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-26T08:25:32.998408" elapsed="0.208481"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-26T08:25:33.208746" level="INFO">Clicking element 'xpath=//button[@type='submit']'.</msg>
+<arg>${SEARCH_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-26T08:25:33.206889" elapsed="1.436191"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${RESULT_TITLE}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-26T08:25:34.643080" elapsed="0.153125"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2025-02-26T08:25:34.833790" level="INFO">Element 'id=firstHeading' contains text 'Robot Framework'.</msg>
+<arg>${RESULT_TITLE}</arg>
+<arg>Robot Framework</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2025-02-26T08:25:34.796205" elapsed="0.037585"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-26T08:25:34.833790" elapsed="2.281248"/>
+</kw>
+<status status="PASS" start="2025-02-26T08:25:29.453915" elapsed="7.661123"/>
+</test>
+<status status="PASS" start="2025-02-26T08:25:28.976252" elapsed="8.140438"/>
+</suite>
+<doc>[https://pabot.org/?ref=log|Pabot] result from 3 executions.</doc>
+<status status="PASS" start="2025-02-26T08:25:12.184000" elapsed="11.093398"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Suites">Suites</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="01 Test One copy 2">Suites.01 Test One copy 2</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s2" name="01 Test One copy 4">Suites.01 Test One copy 4</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s3" name="01 Test One copy 3">Suites.01 Test One copy 3</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

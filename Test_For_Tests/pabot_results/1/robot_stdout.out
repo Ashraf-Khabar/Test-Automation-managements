@@ -1,0 +1,25 @@
+==============================================================================
+Suites                                                                        
+==============================================================================
+Suites.02 Test Two                                                            
+==============================================================================
+Test Conversion Monnaie XE                                              
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\khaba\OneDrive\Bureau\PY\Test-Automation-managements\Test_For_Tests\02_Test_Two.robot:14
+    T:  Test Conversion Monnaie XE    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\khaba\OneDrive\Bureau\PY\Test-Automation-managements\Test_For_Tests\02_Test_Two.robot:17
+      Wait Until Element Is Visible    ${AMOUNT_FIELD}    timeout=5s
+      |  ${AMOUNT_FIELD} = name=Amount (str)
+______________________________________________________________________________
+| FAIL |
+Element 'name=Amount' not visible after 5 seconds.
+------------------------------------------------------------------------------
+Suites.02 Test Two                                                    | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Suites                                                                | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  C:\Users\khaba\OneDrive\Bureau\PY\Test-Automation-managements\Test_For_Tests\pabot_results\1\output.xml
