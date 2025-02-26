@@ -18,7 +18,7 @@ class RobotTestRunner(QWidget):
     def show_logo(self):
         """ Affiche le logo pendant quelques secondes au démarrage """
         self.logo_label = QLabel(self)
-        logo_pixmap = QPixmap("./image copy.png")
+        logo_pixmap = QPixmap("./icons/Robot.png")
         self.logo_label.setPixmap(logo_pixmap)
         self.logo_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.logo_label.setGeometry(self.rect()) 
@@ -28,7 +28,6 @@ class RobotTestRunner(QWidget):
         QTimer.singleShot(4000, self.hide_logo)
 
     def hide_logo(self):
-        """ Masque le logo après 3 à 5 secondes """
         if self.logo_label:
             self.logo_label.hide()
 
@@ -117,7 +116,7 @@ class RobotTestRunner(QWidget):
         self.output_directory = ""
     
     def apply_styles(self):
-        style_file = os.path.abspath("style.qss")
+        style_file = os.path.abspath("./style/style.qss")
         if os.path.exists(style_file):
             with open(style_file, "r") as file:
                 self.setStyleSheet(file.read())

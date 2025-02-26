@@ -1,181 +1,547 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Rebot 7.0 (Python 3.12.3 on win32)" generated="2025-02-26T08:25:41.628353" rpa="false" schemaversion="5">
+<robot generator="Rebot 7.0 (Python 3.12.3 on win32)" generated="2025-02-26T14:48:12.723547" rpa="false" schemaversion="5">
 <suite id="s1" name="Suites">
 <suite id="s1-s1" name="01 Test One copy 2" source="C:\Users\khaba\OneDrive\Bureau\PY\Test-Automation-managements\Test_For_Tests\01_Test_One copy 2.robot">
 <test id="s1-s1-t1" name="Test Recherche Wikipedia" line="12">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-26T08:25:12.867611" level="INFO">Opening browser 'Chrome' to base url 'https://www.wikipedia.org/'.</msg>
+<msg time="2025-02-26T14:47:34.990480" level="INFO">Opening browser 'Chrome' to base url 'https://www.wikipedia.org/'.</msg>
+<msg time="2025-02-26T14:47:35.987288" level="WARN">There was an error managing chromedriver (error sending request for url (https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json)); using driver found in the cache</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-26T08:25:12.867611" elapsed="5.895524"/>
+<status status="PASS" start="2025-02-26T14:47:34.990480" elapsed="28.399297"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-02-26T08:25:18.763135" elapsed="0.071140"/>
+<status status="PASS" start="2025-02-26T14:48:03.391289" elapsed="0.030005"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-02-26T14:48:03.428773" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.141)
+Stacktrace:
+	GetHandleVerifier [0x00007FF79562C6A5+28789]
+	(No symbol) [0x00007FF795595B20]
+	(No symbol) [0x00007FF795428F9A]
+	(No symbol) [0x00007FF795401563]
+	(No symbol) [0x00007FF7954AEF1E]
+	(No symbol) [0x00007FF7954CF0D2]
+	(No symbol) [0x00007FF7954A7103]
+	(No symbol) [0x00007FF79546FFC0]
+	(No symbol) [0x00007FF795471273]
+	GetHandleVerifier [0x00007FF795971AED+3458237]
+	GetHandleVerifier [0x00007FF79598829C+3550316]
+	GetHandleVerifier [0x00007FF79597DB9D+3507565]
+	GetHandleVerifier [0x00007FF7956F2C6A+841274]
+	(No symbol) [0x00007FF7955A09EF]
+	(No symbol) [0x00007FF79559CB34]
+	(No symbol) [0x00007FF79559CCD6]
+	(No symbol) [0x00007FF79558C119]
+	BaseThreadInitThunk [0x00007FFA44D2E8D7+23]
+	RtlUserThreadStart [0x00007FFA460FBF2C+44]
+</msg>
+<msg time="2025-02-26T14:48:03.437731" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.141)
+Stacktrace:
+	GetHandleVerifier [0x00007FF79562C6A5+28789]
+	(No symbol) [0x00007FF795595B20]
+	(No symbol) [0x00007FF795428F9A]
+	(No symbol) [0x00007FF795401563]
+	(No symbol) [0x00007FF7954AEF1E]
+	(No symbol) [0x00007FF7954CF0D2]
+	(No symbol) [0x00007FF7954A7103]
+	(No symbol) [0x00007FF79546FFC0]
+	(No symbol) [0x00007FF795471273]
+	GetHandleVerifier [0x00007FF795971AED+3458237]
+	GetHandleVerifier [0x00007FF79598829C+3550316]
+	GetHandleVerifier [0x00007FF79597DB9D+3507565]
+	GetHandleVerifier [0x00007FF7956F2C6A+841274]
+	(No symbol) [0x00007FF7955A09EF]
+	(No symbol) [0x00007FF79559CB34]
+	(No symbol) [0x00007FF79559CCD6]
+	(No symbol) [0x00007FF79558C119]
+	BaseThreadInitThunk [0x00007FFA44D2E8D7+23]
+	RtlUserThreadStart [0x00007FFA460FBF2C+44]
+</msg>
 <arg>${SEARCH_FIELD}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-02-26T08:25:18.835149" elapsed="0.055092"/>
+<status status="FAIL" start="2025-02-26T14:48:03.421294" elapsed="0.020232">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.141)
+Stacktrace:
+	GetHandleVerifier [0x00007FF79562C6A5+28789]
+	(No symbol) [0x00007FF795595B20]
+	(No symbol) [0x00007FF795428F9A]
+	(No symbol) [0x00007FF795401563]
+	(No symbol) [0x00007FF7954AEF1E]
+	(No symbol) [0x00007FF7954CF0D2]
+	(No symbol) [0x00007FF7954A7103]
+	(No symbol) [0x00007FF79546FFC0]
+	(No symbol) [0x00007FF795471273]
+	GetHandleVerifier [0x00007FF795971AED+3458237]
+	GetHandleVerifier [0x00007FF79598829C+3550316]
+	GetHandleVerifier [0x00007FF79597DB9D+3507565]
+	GetHandleVerifier [0x00007FF7956F2C6A+841274]
+	(No symbol) [0x00007FF7955A09EF]
+	(No symbol) [0x00007FF79559CB34]
+	(No symbol) [0x00007FF79559CCD6]
+	(No symbol) [0x00007FF79558C119]
+	BaseThreadInitThunk [0x00007FFA44D2E8D7+23]
+	RtlUserThreadStart [0x00007FFA460FBF2C+44]
+</status>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-26T08:25:18.892230" level="INFO">Typing text 'Robot Framework' into text field 'name=search'.</msg>
 <arg>${SEARCH_FIELD}</arg>
 <arg>Robot Framework</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-26T08:25:18.892230" elapsed="0.333380"/>
+<status status="NOT RUN" start="2025-02-26T14:48:03.449987" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-26T08:25:19.225610" level="INFO">Clicking element 'xpath=//button[@type='submit']'.</msg>
 <arg>${SEARCH_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-26T08:25:19.225610" elapsed="1.415473"/>
+<status status="NOT RUN" start="2025-02-26T14:48:03.449987" elapsed="0.001933"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${RESULT_TITLE}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-02-26T08:25:20.641083" elapsed="0.169311"/>
+<status status="NOT RUN" start="2025-02-26T14:48:03.451920" elapsed="0.000000"/>
 </kw>
 <kw name="Element Should Contain" owner="SeleniumLibrary">
-<msg time="2025-02-26T08:25:20.861237" level="INFO">Element 'id=firstHeading' contains text 'Robot Framework'.</msg>
 <arg>${RESULT_TITLE}</arg>
 <arg>Robot Framework</arg>
 <doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<status status="PASS" start="2025-02-26T08:25:20.810394" elapsed="0.052617"/>
+<status status="NOT RUN" start="2025-02-26T14:48:03.453945" elapsed="0.000000"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-02-26T08:25:20.863011" elapsed="2.406265"/>
+<status status="PASS" start="2025-02-26T14:48:03.458041" elapsed="2.278558"/>
 </kw>
-<status status="PASS" start="2025-02-26T08:25:12.865592" elapsed="10.405056"/>
+<status status="FAIL" start="2025-02-26T14:47:34.990480" elapsed="30.746119">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.141)
+Stacktrace:
+	GetHandleVerifier [0x00007FF79562C6A5+28789]
+	(No symbol) [0x00007FF795595B20]
+	(No symbol) [0x00007FF795428F9A]
+	(No symbol) [0x00007FF795401563]
+	(No symbol) [0x00007FF7954AEF1E]
+	(No symbol) [0x00007FF7954CF0D2]
+	(No symbol) [0x00007FF7954A7103]
+	(No symbol) [0x00007FF79546FFC0]
+	(No symbol) [0x00007FF795471273]
+	GetHandleVerifier [0x00007FF795971AED+3458237]
+	GetHandleVerifier [0x00007FF79598829C+3550316]
+	GetHandleVerifier [0x00007FF79597DB9D+3507565]
+	GetHandleVerifier [0x00007FF7956F2C6A+841274]
+	(No symbol) [0x00007FF7955A09EF]
+	(No symbol) [0x00007FF79559CB34]
+	(No symbol) [0x00007FF79559CCD6]
+	(No symbol) [0x00007FF79558C119]
+	BaseThreadInitThunk [0x00007FFA44D2E8D7+23]
+	RtlUserThreadStart [0x00007FFA460FBF2C+44]
+</status>
 </test>
-<status status="PASS" start="2025-02-26T08:25:12.217000" elapsed="11.053495"/>
+<status status="FAIL" start="2025-02-26T14:47:34.514000" elapsed="31.231551"/>
 </suite>
-<suite id="s1-s2" name="01 Test One copy 4" source="C:\Users\khaba\OneDrive\Bureau\PY\Test-Automation-managements\Test_For_Tests\01_Test_One copy 4.robot">
-<test id="s1-s2-t1" name="Test Recherche Wikipedia" line="12">
+<suite id="s1-s2" name="02 Test Two copy 2" source="C:\Users\khaba\OneDrive\Bureau\PY\Test-Automation-managements\Test_For_Tests\02_Test_Two copy 2.robot">
+<test id="s1-s2-t1" name="Test Conversion Monnaie XE" line="14">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-26T08:25:12.867611" level="INFO">Opening browser 'Chrome' to base url 'https://www.wikipedia.org/'.</msg>
+<msg time="2025-02-26T14:47:34.978398" level="INFO">Opening browser 'Chrome' to base url 'https://www.xe.com/'.</msg>
+<msg time="2025-02-26T14:47:35.987288" level="WARN">There was an error managing chromedriver (error sending request for url (https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json)); using driver found in the cache</msg>
+<msg time="2025-02-26T14:47:35.987288" level="WARN">Error sending stats to Plausible: error sending request for url (https://plausible.io/api/event)</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-26T08:25:12.867611" elapsed="4.906374"/>
+<status status="PASS" start="2025-02-26T14:47:34.978398" elapsed="25.705982"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-02-26T08:25:17.774924" elapsed="1.060225"/>
+<status status="PASS" start="2025-02-26T14:48:00.684380" elapsed="0.018541"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${SEARCH_FIELD}</arg>
+<msg time="2025-02-26T14:48:00.702921" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.141)
+Stacktrace:
+	GetHandleVerifier [0x00007FF79562C6A5+28789]
+	(No symbol) [0x00007FF795595B20]
+	(No symbol) [0x00007FF795428F9A]
+	(No symbol) [0x00007FF795401563]
+	(No symbol) [0x00007FF7954AEF1E]
+	(No symbol) [0x00007FF7954CF0D2]
+	(No symbol) [0x00007FF7954A7103]
+	(No symbol) [0x00007FF79546FFC0]
+	(No symbol) [0x00007FF795471273]
+	GetHandleVerifier [0x00007FF795971AED+3458237]
+	GetHandleVerifier [0x00007FF79598829C+3550316]
+	GetHandleVerifier [0x00007FF79597DB9D+3507565]
+	GetHandleVerifier [0x00007FF7956F2C6A+841274]
+	(No symbol) [0x00007FF7955A09EF]
+	(No symbol) [0x00007FF79559CB34]
+	(No symbol) [0x00007FF79559CCD6]
+	(No symbol) [0x00007FF79558C119]
+	BaseThreadInitThunk [0x00007FFA44D2E8D7+23]
+	RtlUserThreadStart [0x00007FFA460FBF2C+44]
+</msg>
+<msg time="2025-02-26T14:48:00.723184" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.141)
+Stacktrace:
+	GetHandleVerifier [0x00007FF79562C6A5+28789]
+	(No symbol) [0x00007FF795595B20]
+	(No symbol) [0x00007FF795428F9A]
+	(No symbol) [0x00007FF795401563]
+	(No symbol) [0x00007FF7954AEF1E]
+	(No symbol) [0x00007FF7954CF0D2]
+	(No symbol) [0x00007FF7954A7103]
+	(No symbol) [0x00007FF79546FFC0]
+	(No symbol) [0x00007FF795471273]
+	GetHandleVerifier [0x00007FF795971AED+3458237]
+	GetHandleVerifier [0x00007FF79598829C+3550316]
+	GetHandleVerifier [0x00007FF79597DB9D+3507565]
+	GetHandleVerifier [0x00007FF7956F2C6A+841274]
+	(No symbol) [0x00007FF7955A09EF]
+	(No symbol) [0x00007FF79559CB34]
+	(No symbol) [0x00007FF79559CCD6]
+	(No symbol) [0x00007FF79558C119]
+	BaseThreadInitThunk [0x00007FFA44D2E8D7+23]
+	RtlUserThreadStart [0x00007FFA460FBF2C+44]
+</msg>
+<arg>${AMOUNT_FIELD}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-02-26T08:25:18.835149" elapsed="0.057081"/>
+<status status="FAIL" start="2025-02-26T14:48:00.702921" elapsed="0.178881">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.141)
+Stacktrace:
+	GetHandleVerifier [0x00007FF79562C6A5+28789]
+	(No symbol) [0x00007FF795595B20]
+	(No symbol) [0x00007FF795428F9A]
+	(No symbol) [0x00007FF795401563]
+	(No symbol) [0x00007FF7954AEF1E]
+	(No symbol) [0x00007FF7954CF0D2]
+	(No symbol) [0x00007FF7954A7103]
+	(No symbol) [0x00007FF79546FFC0]
+	(No symbol) [0x00007FF795471273]
+	GetHandleVerifier [0x00007FF795971AED+3458237]
+	GetHandleVerifier [0x00007FF79598829C+3550316]
+	GetHandleVerifier [0x00007FF79597DB9D+3507565]
+	GetHandleVerifier [0x00007FF7956F2C6A+841274]
+	(No symbol) [0x00007FF7955A09EF]
+	(No symbol) [0x00007FF79559CB34]
+	(No symbol) [0x00007FF79559CCD6]
+	(No symbol) [0x00007FF79558C119]
+	BaseThreadInitThunk [0x00007FFA44D2E8D7+23]
+	RtlUserThreadStart [0x00007FFA460FBF2C+44]
+</status>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-26T08:25:18.892230" level="INFO">Typing text 'Robot Framework' into text field 'name=search'.</msg>
-<arg>${SEARCH_FIELD}</arg>
-<arg>Robot Framework</arg>
+<arg>${AMOUNT_FIELD}</arg>
+<arg>100</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-26T08:25:18.892230" elapsed="0.262358"/>
+<status status="NOT RUN" start="2025-02-26T14:48:00.881802" elapsed="0.000000"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<arg>${FROM_CURRENCY}</arg>
+<arg>EUR</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="NOT RUN" start="2025-02-26T14:48:00.881802" elapsed="0.000000"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<arg>${TO_CURRENCY}</arg>
+<arg>USD</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="NOT RUN" start="2025-02-26T14:48:00.881802" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-26T08:25:19.157215" level="INFO">Clicking element 'xpath=//button[@type='submit']'.</msg>
-<arg>${SEARCH_BUTTON}</arg>
+<arg>${CONVERT_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-26T08:25:19.154588" elapsed="1.612921"/>
+<status status="NOT RUN" start="2025-02-26T14:48:00.881802" elapsed="0.000000"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${RESULT_TITLE}</arg>
+<arg>${RESULT_SECTION}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-02-26T08:25:20.767509" elapsed="0.274978"/>
+<status status="NOT RUN" start="2025-02-26T14:48:00.881802" elapsed="0.000000"/>
 </kw>
-<kw name="Element Should Contain" owner="SeleniumLibrary">
-<msg time="2025-02-26T08:25:21.105561" level="INFO">Element 'id=firstHeading' contains text 'Robot Framework'.</msg>
-<arg>${RESULT_TITLE}</arg>
-<arg>Robot Framework</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<status status="PASS" start="2025-02-26T08:25:21.042487" elapsed="0.063074"/>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<arg>${RESULT_SECTION}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-02-26T14:48:00.881802" elapsed="0.000000"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-02-26T08:25:21.105561" elapsed="2.355985"/>
+<status status="PASS" start="2025-02-26T14:48:00.881802" elapsed="2.236914"/>
 </kw>
-<status status="PASS" start="2025-02-26T08:25:12.861931" elapsed="10.599615"/>
+<status status="FAIL" start="2025-02-26T14:47:34.978398" elapsed="28.141760">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.141)
+Stacktrace:
+	GetHandleVerifier [0x00007FF79562C6A5+28789]
+	(No symbol) [0x00007FF795595B20]
+	(No symbol) [0x00007FF795428F9A]
+	(No symbol) [0x00007FF795401563]
+	(No symbol) [0x00007FF7954AEF1E]
+	(No symbol) [0x00007FF7954CF0D2]
+	(No symbol) [0x00007FF7954A7103]
+	(No symbol) [0x00007FF79546FFC0]
+	(No symbol) [0x00007FF795471273]
+	GetHandleVerifier [0x00007FF795971AED+3458237]
+	GetHandleVerifier [0x00007FF79598829C+3550316]
+	GetHandleVerifier [0x00007FF79597DB9D+3507565]
+	GetHandleVerifier [0x00007FF7956F2C6A+841274]
+	(No symbol) [0x00007FF7955A09EF]
+	(No symbol) [0x00007FF79559CB34]
+	(No symbol) [0x00007FF79559CCD6]
+	(No symbol) [0x00007FF79558C119]
+	BaseThreadInitThunk [0x00007FFA44D2E8D7+23]
+	RtlUserThreadStart [0x00007FFA460FBF2C+44]
+</status>
 </test>
-<status status="PASS" start="2025-02-26T08:25:12.217153" elapsed="11.246411"/>
+<status status="FAIL" start="2025-02-26T14:47:34.489847" elapsed="28.630311"/>
 </suite>
 <suite id="s1-s3" name="01 Test One copy 3" source="C:\Users\khaba\OneDrive\Bureau\PY\Test-Automation-managements\Test_For_Tests\01_Test_One copy 3.robot">
 <test id="s1-s3-t1" name="Test Recherche Wikipedia" line="12">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-26T08:25:29.461071" level="INFO">Opening browser 'Chrome' to base url 'https://www.wikipedia.org/'.</msg>
+<msg time="2025-02-26T14:47:34.999261" level="INFO">Opening browser 'Chrome' to base url 'https://www.wikipedia.org/'.</msg>
+<msg time="2025-02-26T14:47:35.987288" level="WARN">There was an error managing chromedriver (error sending request for url (https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json)); using driver found in the cache</msg>
+<msg time="2025-02-26T14:47:35.987288" level="WARN">Error sending stats to Plausible: error sending request for url (https://plausible.io/api/event)</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-26T08:25:29.461071" elapsed="3.437826"/>
+<status status="PASS" start="2025-02-26T14:47:34.997866" elapsed="30.813439"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-02-26T08:25:32.901040" elapsed="0.057821"/>
+<status status="PASS" start="2025-02-26T14:48:05.811305" elapsed="0.029026"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-02-26T14:48:05.858256" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.141)
+Stacktrace:
+	GetHandleVerifier [0x00007FF79562C6A5+28789]
+	(No symbol) [0x00007FF795595B20]
+	(No symbol) [0x00007FF795428F9A]
+	(No symbol) [0x00007FF795401563]
+	(No symbol) [0x00007FF7954AEF1E]
+	(No symbol) [0x00007FF7954CF0D2]
+	(No symbol) [0x00007FF7954A7103]
+	(No symbol) [0x00007FF79546FFC0]
+	(No symbol) [0x00007FF795471273]
+	GetHandleVerifier [0x00007FF795971AED+3458237]
+	GetHandleVerifier [0x00007FF79598829C+3550316]
+	GetHandleVerifier [0x00007FF79597DB9D+3507565]
+	GetHandleVerifier [0x00007FF7956F2C6A+841274]
+	(No symbol) [0x00007FF7955A09EF]
+	(No symbol) [0x00007FF79559CB34]
+	(No symbol) [0x00007FF79559CCD6]
+	(No symbol) [0x00007FF79558C119]
+	BaseThreadInitThunk [0x00007FFA44D2E8D7+23]
+	RtlUserThreadStart [0x00007FFA460FBF2C+44]
+</msg>
+<msg time="2025-02-26T14:48:05.860026" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.141)
+Stacktrace:
+	GetHandleVerifier [0x00007FF79562C6A5+28789]
+	(No symbol) [0x00007FF795595B20]
+	(No symbol) [0x00007FF795428F9A]
+	(No symbol) [0x00007FF795401563]
+	(No symbol) [0x00007FF7954AEF1E]
+	(No symbol) [0x00007FF7954CF0D2]
+	(No symbol) [0x00007FF7954A7103]
+	(No symbol) [0x00007FF79546FFC0]
+	(No symbol) [0x00007FF795471273]
+	GetHandleVerifier [0x00007FF795971AED+3458237]
+	GetHandleVerifier [0x00007FF79598829C+3550316]
+	GetHandleVerifier [0x00007FF79597DB9D+3507565]
+	GetHandleVerifier [0x00007FF7956F2C6A+841274]
+	(No symbol) [0x00007FF7955A09EF]
+	(No symbol) [0x00007FF79559CB34]
+	(No symbol) [0x00007FF79559CCD6]
+	(No symbol) [0x00007FF79558C119]
+	BaseThreadInitThunk [0x00007FFA44D2E8D7+23]
+	RtlUserThreadStart [0x00007FFA460FBF2C+44]
+</msg>
 <arg>${SEARCH_FIELD}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-02-26T08:25:32.958861" elapsed="0.039547"/>
+<status status="FAIL" start="2025-02-26T14:48:05.840331" elapsed="0.030259">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.141)
+Stacktrace:
+	GetHandleVerifier [0x00007FF79562C6A5+28789]
+	(No symbol) [0x00007FF795595B20]
+	(No symbol) [0x00007FF795428F9A]
+	(No symbol) [0x00007FF795401563]
+	(No symbol) [0x00007FF7954AEF1E]
+	(No symbol) [0x00007FF7954CF0D2]
+	(No symbol) [0x00007FF7954A7103]
+	(No symbol) [0x00007FF79546FFC0]
+	(No symbol) [0x00007FF795471273]
+	GetHandleVerifier [0x00007FF795971AED+3458237]
+	GetHandleVerifier [0x00007FF79598829C+3550316]
+	GetHandleVerifier [0x00007FF79597DB9D+3507565]
+	GetHandleVerifier [0x00007FF7956F2C6A+841274]
+	(No symbol) [0x00007FF7955A09EF]
+	(No symbol) [0x00007FF79559CB34]
+	(No symbol) [0x00007FF79559CCD6]
+	(No symbol) [0x00007FF79558C119]
+	BaseThreadInitThunk [0x00007FFA44D2E8D7+23]
+	RtlUserThreadStart [0x00007FFA460FBF2C+44]
+</status>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-26T08:25:33.002207" level="INFO">Typing text 'Robot Framework' into text field 'name=search'.</msg>
 <arg>${SEARCH_FIELD}</arg>
 <arg>Robot Framework</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-26T08:25:32.998408" elapsed="0.208481"/>
+<status status="NOT RUN" start="2025-02-26T14:48:05.872613" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-26T08:25:33.208746" level="INFO">Clicking element 'xpath=//button[@type='submit']'.</msg>
 <arg>${SEARCH_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-26T08:25:33.206889" elapsed="1.436191"/>
+<status status="NOT RUN" start="2025-02-26T14:48:05.874624" elapsed="0.000000"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${RESULT_TITLE}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-02-26T08:25:34.643080" elapsed="0.153125"/>
+<status status="NOT RUN" start="2025-02-26T14:48:05.874624" elapsed="0.000000"/>
 </kw>
 <kw name="Element Should Contain" owner="SeleniumLibrary">
-<msg time="2025-02-26T08:25:34.833790" level="INFO">Element 'id=firstHeading' contains text 'Robot Framework'.</msg>
 <arg>${RESULT_TITLE}</arg>
 <arg>Robot Framework</arg>
 <doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<status status="PASS" start="2025-02-26T08:25:34.796205" elapsed="0.037585"/>
+<status status="NOT RUN" start="2025-02-26T14:48:05.876642" elapsed="0.000000"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-02-26T08:25:34.833790" elapsed="2.281248"/>
+<status status="PASS" start="2025-02-26T14:48:05.878659" elapsed="2.282648"/>
 </kw>
-<status status="PASS" start="2025-02-26T08:25:29.453915" elapsed="7.661123"/>
+<status status="FAIL" start="2025-02-26T14:47:34.995373" elapsed="33.165934">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.141)
+Stacktrace:
+	GetHandleVerifier [0x00007FF79562C6A5+28789]
+	(No symbol) [0x00007FF795595B20]
+	(No symbol) [0x00007FF795428F9A]
+	(No symbol) [0x00007FF795401563]
+	(No symbol) [0x00007FF7954AEF1E]
+	(No symbol) [0x00007FF7954CF0D2]
+	(No symbol) [0x00007FF7954A7103]
+	(No symbol) [0x00007FF79546FFC0]
+	(No symbol) [0x00007FF795471273]
+	GetHandleVerifier [0x00007FF795971AED+3458237]
+	GetHandleVerifier [0x00007FF79598829C+3550316]
+	GetHandleVerifier [0x00007FF79597DB9D+3507565]
+	GetHandleVerifier [0x00007FF7956F2C6A+841274]
+	(No symbol) [0x00007FF7955A09EF]
+	(No symbol) [0x00007FF79559CB34]
+	(No symbol) [0x00007FF79559CCD6]
+	(No symbol) [0x00007FF79558C119]
+	BaseThreadInitThunk [0x00007FFA44D2E8D7+23]
+	RtlUserThreadStart [0x00007FFA460FBF2C+44]
+</status>
 </test>
-<status status="PASS" start="2025-02-26T08:25:28.976252" elapsed="8.140438"/>
+<status status="FAIL" start="2025-02-26T14:47:34.495514" elapsed="33.675956"/>
 </suite>
 <doc>[https://pabot.org/?ref=log|Pabot] result from 3 executions.</doc>
-<status status="PASS" start="2025-02-26T08:25:12.184000" elapsed="11.093398"/>
+<status status="FAIL" start="2025-02-26T14:47:34.455000" elapsed="31.265660"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="3" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="3" fail="0" skip="0" id="s1" name="Suites">Suites</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="01 Test One copy 2">Suites.01 Test One copy 2</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s2" name="01 Test One copy 4">Suites.01 Test One copy 4</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s3" name="01 Test One copy 3">Suites.01 Test One copy 3</stat>
+<stat pass="0" fail="3" skip="0" id="s1" name="Suites">Suites</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="01 Test One copy 2">Suites.01 Test One copy 2</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s2" name="02 Test Two copy 2">Suites.02 Test Two copy 2</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s3" name="01 Test One copy 3">Suites.01 Test One copy 3</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2025-02-26T14:47:35.987288" level="WARN">There was an error managing chromedriver (error sending request for url (https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json)); using driver found in the cache</msg>
+<msg time="2025-02-26T14:48:03.428773" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.141)
+Stacktrace:
+	GetHandleVerifier [0x00007FF79562C6A5+28789]
+	(No symbol) [0x00007FF795595B20]
+	(No symbol) [0x00007FF795428F9A]
+	(No symbol) [0x00007FF795401563]
+	(No symbol) [0x00007FF7954AEF1E]
+	(No symbol) [0x00007FF7954CF0D2]
+	(No symbol) [0x00007FF7954A7103]
+	(No symbol) [0x00007FF79546FFC0]
+	(No symbol) [0x00007FF795471273]
+	GetHandleVerifier [0x00007FF795971AED+3458237]
+	GetHandleVerifier [0x00007FF79598829C+3550316]
+	GetHandleVerifier [0x00007FF79597DB9D+3507565]
+	GetHandleVerifier [0x00007FF7956F2C6A+841274]
+	(No symbol) [0x00007FF7955A09EF]
+	(No symbol) [0x00007FF79559CB34]
+	(No symbol) [0x00007FF79559CCD6]
+	(No symbol) [0x00007FF79558C119]
+	BaseThreadInitThunk [0x00007FFA44D2E8D7+23]
+	RtlUserThreadStart [0x00007FFA460FBF2C+44]
+</msg>
+<msg time="2025-02-26T14:47:35.987288" level="WARN">There was an error managing chromedriver (error sending request for url (https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json)); using driver found in the cache</msg>
+<msg time="2025-02-26T14:47:35.987288" level="WARN">Error sending stats to Plausible: error sending request for url (https://plausible.io/api/event)</msg>
+<msg time="2025-02-26T14:48:00.702921" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.141)
+Stacktrace:
+	GetHandleVerifier [0x00007FF79562C6A5+28789]
+	(No symbol) [0x00007FF795595B20]
+	(No symbol) [0x00007FF795428F9A]
+	(No symbol) [0x00007FF795401563]
+	(No symbol) [0x00007FF7954AEF1E]
+	(No symbol) [0x00007FF7954CF0D2]
+	(No symbol) [0x00007FF7954A7103]
+	(No symbol) [0x00007FF79546FFC0]
+	(No symbol) [0x00007FF795471273]
+	GetHandleVerifier [0x00007FF795971AED+3458237]
+	GetHandleVerifier [0x00007FF79598829C+3550316]
+	GetHandleVerifier [0x00007FF79597DB9D+3507565]
+	GetHandleVerifier [0x00007FF7956F2C6A+841274]
+	(No symbol) [0x00007FF7955A09EF]
+	(No symbol) [0x00007FF79559CB34]
+	(No symbol) [0x00007FF79559CCD6]
+	(No symbol) [0x00007FF79558C119]
+	BaseThreadInitThunk [0x00007FFA44D2E8D7+23]
+	RtlUserThreadStart [0x00007FFA460FBF2C+44]
+</msg>
+<msg time="2025-02-26T14:47:35.987288" level="WARN">There was an error managing chromedriver (error sending request for url (https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json)); using driver found in the cache</msg>
+<msg time="2025-02-26T14:47:35.987288" level="WARN">Error sending stats to Plausible: error sending request for url (https://plausible.io/api/event)</msg>
+<msg time="2025-02-26T14:48:05.858256" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.141)
+Stacktrace:
+	GetHandleVerifier [0x00007FF79562C6A5+28789]
+	(No symbol) [0x00007FF795595B20]
+	(No symbol) [0x00007FF795428F9A]
+	(No symbol) [0x00007FF795401563]
+	(No symbol) [0x00007FF7954AEF1E]
+	(No symbol) [0x00007FF7954CF0D2]
+	(No symbol) [0x00007FF7954A7103]
+	(No symbol) [0x00007FF79546FFC0]
+	(No symbol) [0x00007FF795471273]
+	GetHandleVerifier [0x00007FF795971AED+3458237]
+	GetHandleVerifier [0x00007FF79598829C+3550316]
+	GetHandleVerifier [0x00007FF79597DB9D+3507565]
+	GetHandleVerifier [0x00007FF7956F2C6A+841274]
+	(No symbol) [0x00007FF7955A09EF]
+	(No symbol) [0x00007FF79559CB34]
+	(No symbol) [0x00007FF79559CCD6]
+	(No symbol) [0x00007FF79558C119]
+	BaseThreadInitThunk [0x00007FFA44D2E8D7+23]
+	RtlUserThreadStart [0x00007FFA460FBF2C+44]
+</msg>
 </errors>
 </robot>

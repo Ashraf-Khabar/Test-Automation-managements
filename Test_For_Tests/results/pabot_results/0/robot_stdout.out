@@ -3,12 +3,45 @@ Suites
 ==============================================================================
 Suites.01 Test One copy 2                                                     
 ==============================================================================
-Test Recherche Wikipedia                                              | PASS |
+Test Recherche Wikipedia                                                
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\khaba\OneDrive\Bureau\PY\Test-Automation-managements\Test_For_Tests\01_Test_One copy 2.robot:12
+    T:  Test Recherche Wikipedia    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\khaba\OneDrive\Bureau\PY\Test-Automation-managements\Test_For_Tests\01_Test_One copy 2.robot:15
+      Wait Until Element Is Visible    ${SEARCH_FIELD}    timeout=5s
+      |  ${SEARCH_FIELD} = name=search (str)
+______________________________________________________________________________
+| FAIL |
+NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.141)
+Stacktrace:
+	GetHandleVerifier [0x00007FF79562C6A5+28789]
+	(No symbol) [0x00007FF795595B20]
+	(No symbol) [0x00007FF795428F9A]
+	(No symbol) [0x00007FF795401563]
+	(No symbol) [0x00007FF7954AEF1E]
+	(No symbol) [0x00007FF7954CF0D2]
+	(No symbol) [0x00007FF7954A7103]
+	(No symbol) [0x00007FF79546FFC0]
+	(No symbol) [0x00007FF795471273]
+	GetHandleVerifier [0x00007FF795971AED+3458237]
+	GetHandleVerifier [0x00007FF79598829C+3550316]
+	GetHandleVerifier [0x00007FF79597DB9D+3507565]
+	GetHandleVerifier [0x00007FF7956F2C6A+841274]
+	(No symbol) [0x00007FF7955A09EF]
+	(No symbol) [0x00007FF79559CB34]
+	(No symbol) [0x00007FF79559CCD6]
+	(No symbol) [0x00007FF79558C119]
+	BaseThreadInitThunk [0x00007FFA44D2E8D7+23]
+	RtlUserThreadStart [0x00007FFA460FBF2C+44]
 ------------------------------------------------------------------------------
-Suites.01 Test One copy 2                                             | PASS |
-1 test, 1 passed, 0 failed
+Suites.01 Test One copy 2                                             | FAIL |
+1 test, 0 passed, 1 failed
 ==============================================================================
-Suites                                                                | PASS |
-1 test, 1 passed, 0 failed
+Suites                                                                | FAIL |
+1 test, 0 passed, 1 failed
 ==============================================================================
 Output:  C:\Users\khaba\OneDrive\Bureau\PY\Test-Automation-managements\Test_For_Tests\results\pabot_results\0\output.xml
