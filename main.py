@@ -6,6 +6,7 @@ from PyQt6.QtWidgets import (QApplication, QWidget, QVBoxLayout, QPushButton, QF
                              QLabel, QListWidget, QListWidgetItem, QLineEdit, QHBoxLayout, QFrame, QCheckBox)
 from PyQt6.QtCore import Qt, QPoint, QTimer
 from PyQt6.QtGui import QPixmap
+from PyQt6.QtWidgets import QApplication, QSpinBox
 
 class RobotTestRunner(QWidget):
     def __init__(self):
@@ -18,7 +19,7 @@ class RobotTestRunner(QWidget):
     def show_logo(self):
         """ Affiche le logo pendant quelques secondes au démarrage """
         self.logo_label = QLabel(self)
-        logo_pixmap = QPixmap("./icons/Robot.png")
+        logo_pixmap = QPixmap("./image copy.png")
         self.logo_label.setPixmap(logo_pixmap)
         self.logo_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.logo_label.setGeometry(self.rect()) 
@@ -28,6 +29,7 @@ class RobotTestRunner(QWidget):
         QTimer.singleShot(4000, self.hide_logo)
 
     def hide_logo(self):
+        """ Masque le logo après 3 à 5 secondes """
         if self.logo_label:
             self.logo_label.hide()
 
@@ -80,8 +82,11 @@ class RobotTestRunner(QWidget):
         paramLayout = QHBoxLayout()
         
         self.processLabel = QLabel("Nombre de subprocess :")
-        self.processInput = QLineEdit("2")
+        self.processInput = QSpinBox()
+        self.processInput.setValue(2)
         self.processInput.setFixedWidth(50)
+        self.processInput.setMinimum(0)
+        self.processInput.setMaximum(50)
         paramLayout.addWidget(self.processLabel)
         paramLayout.addWidget(self.processInput)
         

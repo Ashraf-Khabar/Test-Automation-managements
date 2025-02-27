@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.3 on win32)" generated="2025-02-26T16:18:07.780259" rpa="false" schemaversion="5">
+<suite id="s1" name="Suites">
+<suite id="s1-s1" name="04 Test Foure copy 3" source="C:\Users\khaba\OneDrive\Bureau\PY\Test-Automation-managements\Test_For_Tests\04_Test_Foure copy 3.robot">
+<test id="s1-s1-t1" name="Test Conversion Unité" line="14">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-26T16:18:08.357660" level="INFO">Opening browser 'Chrome' to base url 'https://www.unitconverters.net/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-26T16:18:08.351120" elapsed="3.274565"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-26T16:18:11.626632" elapsed="0.053337"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CATEGORY_LINK}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-26T16:18:11.679969" elapsed="0.077345"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-26T16:18:11.760800" level="INFO">Clicking element 'xpath=//a[text()='Length']'.</msg>
+<arg>${CATEGORY_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-26T16:18:11.760800" elapsed="0.161934"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_FIELD}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-26T16:18:11.922734" elapsed="0.039442"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-26T16:18:11.962176" level="INFO">Typing text '10' into text field 'id=fromVal'.</msg>
+<arg>${INPUT_FIELD}</arg>
+<arg>10</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-26T16:18:11.962176" elapsed="0.255664"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2025-02-26T16:18:12.219696" level="INFO">Selecting options from selection list 'id=calFrom' by label Meters.</msg>
+<msg time="2025-02-26T16:18:12.565856" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-02-26T16:18:12.565856" level="FAIL">NoSuchElementException: Message: Could not locate element with visible text: Meters; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+</msg>
+<arg>${UNIT_SELECTOR}</arg>
+<arg>Meters</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="FAIL" start="2025-02-26T16:18:12.219696" elapsed="0.349135">NoSuchElementException: Message: Could not locate element with visible text: Meters; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+</status>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<arg>${TARGET_UNIT}</arg>
+<arg>Kilometers</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="NOT RUN" start="2025-02-26T16:18:12.570468" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-02-26T16:18:12.570468" elapsed="0.000000"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<arg>${OUTPUT_FIELD}</arg>
+<arg>0.01</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" start="2025-02-26T16:18:12.571739" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-26T16:18:12.571739" elapsed="2.262007"/>
+</kw>
+<status status="FAIL" start="2025-02-26T16:18:08.351120" elapsed="6.482626">NoSuchElementException: Message: Could not locate element with visible text: Meters; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+</status>
+</test>
+<status status="FAIL" start="2025-02-26T16:18:07.878617" elapsed="6.958431"/>
+</suite>
+<status status="FAIL" start="2025-02-26T16:18:07.846976" elapsed="6.990072"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Suites">Suites</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="04 Test Foure copy 3">Suites.04 Test Foure copy 3</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

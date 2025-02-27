@@ -1,25 +1,25 @@
 ==============================================================================
 Suites                                                                        
 ==============================================================================
-Suites.02 Test Two copy 2                                                     
+Suites.04 Test Foure copy 3                                                   
 ==============================================================================
-Test Conversion Monnaie XE                                              
+Test Conversion Unité                                                   
   Traceback (most recent call last):
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    File  C:\Users\khaba\OneDrive\Bureau\PY\Test-Automation-managements\Test_For_Tests\02_Test_Two copy 2.robot:14
-    T:  Test Conversion Monnaie XE    
+    File  C:\Users\khaba\OneDrive\Bureau\PY\Test-Automation-managements\Test_For_Tests\04_Test_Foure copy 3.robot:14
+    T:  Test Conversion Unité    
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    File  C:\Users\khaba\OneDrive\Bureau\PY\Test-Automation-managements\Test_For_Tests\02_Test_Two copy 2.robot:17
-      Wait Until Element Is Visible    ${AMOUNT_FIELD}    timeout=5s
-      |  ${AMOUNT_FIELD} = name=Amount (str)
+    File  C:\Users\khaba\OneDrive\Bureau\PY\Test-Automation-managements\Test_For_Tests\04_Test_Foure copy 3.robot:21
+      Select From List By Label    ${UNIT_SELECTOR}    Meters
+      |  ${UNIT_SELECTOR} = id=calFrom (str)
 ______________________________________________________________________________
 | FAIL |
-Element 'name=Amount' not visible after 5 seconds.
+NoSuchElementException: Message: Could not locate element with visible text: Meters; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 ------------------------------------------------------------------------------
-Suites.02 Test Two copy 2                                             | FAIL |
+Suites.04 Test Foure copy 3                                           | FAIL |
 1 test, 0 passed, 1 failed
 ==============================================================================
 Suites                                                                | FAIL |
 1 test, 0 passed, 1 failed
 ==============================================================================
-Output:  C:\Users\khaba\OneDrive\Bureau\PY\Test-Automation-managements\Test_For_Tests\results\pabot_results\1\output.xml
+Output:  C:\Users\khaba\OneDrive\Bureau\PY\Test-Automation-managements\Test_For_Tests\results\pabot_results\3\output.xml
