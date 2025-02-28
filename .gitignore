@@ -1,3 +1,12 @@
-/build/*
-/dist/*
-.RobotTestRunner.spec
+build
+RobotTestRunner.spec
+
+testsForTesting/*.log
+testsForTesting/*.xml
+testsForTesting/*.html
+
+testsForTesting/results
+testsForTesting/.pabotsuitenames
+testsForTesting/pabot_results
+
+controllers/__pycache__

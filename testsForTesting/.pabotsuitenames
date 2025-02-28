@@ -1,8 +1,0 @@
-datasources:c77782bdae577a82b9539769bffec04a76efcca2
-commandlineoptions:9f8598a690c7367accf83ead504756ddd374acc9
-suitesfrom:no-suites-from-option
-file:008980f0de3277de7dacaf9727ab7a39dcf372ae
---suite Suites.01 Test One copy 2
---suite Suites.02 Test Two copy 2
---suite Suites.04 Test Foure copy 2
---suite Suites.04 Test Foure copy 3

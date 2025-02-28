@@ -3,7 +3,7 @@ import os
 import subprocess
 from robot.api import ExecutionResult
 from PyQt6.QtWidgets import (QApplication, QWidget, QVBoxLayout, QPushButton, QFileDialog,
-                             QLabel, QListWidget, QListWidgetItem, QLineEdit, QHBoxLayout, QFrame, QCheckBox)
+                             QLabel, QListWidget, QListWidgetItem, QHBoxLayout, QFrame, QCheckBox)
 from PyQt6.QtCore import Qt, QPoint, QTimer
 from PyQt6.QtGui import QPixmap
 from PyQt6.QtWidgets import QApplication, QSpinBox
@@ -17,9 +17,8 @@ class RobotTestRunner(QWidget):
         self.show_logo()
 
     def show_logo(self):
-        """ Affiche le logo pendant quelques secondes au démarrage """
         self.logo_label = QLabel(self)
-        logo_pixmap = QPixmap("./image copy.png")
+        logo_pixmap = QPixmap("./images/Logo.png")
         self.logo_label.setPixmap(logo_pixmap)
         self.logo_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.logo_label.setGeometry(self.rect()) 
@@ -29,7 +28,6 @@ class RobotTestRunner(QWidget):
         QTimer.singleShot(4000, self.hide_logo)
 
     def hide_logo(self):
-        """ Masque le logo après 3 à 5 secondes """
         if self.logo_label:
             self.logo_label.hide()
 
