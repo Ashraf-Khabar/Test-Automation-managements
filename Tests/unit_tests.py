@@ -2,9 +2,9 @@ import unittest
 import os
 from PyQt6.QtWidgets import QApplication
 from PyQt6.QtCore import Qt
-from main import RobotTestRunner  # Ensure you import your class correctly
+from main import RobotTestRunner
 
-app = QApplication([])  # Create QApplication instance for testing
+app = QApplication([])  
 
 
 class TestRobotTestRunner(unittest.TestCase):
@@ -41,8 +41,8 @@ class TestRobotTestRunner(unittest.TestCase):
 
     def test_run_tests_without_selection(self):
         """Test running tests when no tests are selected"""
-        self.window.test_directory = "mock_directory"  # Set a mock directory
-        self.window.output_directory = "mock_results"  # Set a mock output directory
+        self.window.test_directory = "mock_directory"
+        self.window.output_directory = "mock_results"  
 
         self.window.run_tests()
         self.assertIn("Veuillez sélectionner au moins un test", self.window.resultLabel.text())
