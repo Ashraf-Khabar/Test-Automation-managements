@@ -1,6 +1,6 @@
 /* Style global */
 QWidget {
-    background-color: #316879;
+    background-color:rgb(21, 54, 73);
     color:#ffffff;
     font-size: 10px;
     font-family: IBM Plex Serif;
@@ -8,8 +8,8 @@ QWidget {
 
 /* Boutons */
 QPushButton {
-    background-color: #444;
-    border: 1px solid #666;
+    background-color: #174e5f;
+    border: 1px solid #4389ca;
     border-radius: 8px;
     padding: 8px;
     color: white;
@@ -17,30 +17,30 @@ QPushButton {
 }
 
 QPushButton:hover {
-    background-color: #555;
+    background-color: #4389ca;
 }
 
 QPushButton:pressed {
-    background-color: #222;
+    background-color: #4389ca;
 }
 
 /* Labels */
 QLabel {
     font-size: 10px;
     font-weight: bold;
-    color: #f47a60
+    color: #4389ca
 
 /* Liste des tests */
 QListWidget {
-    background-color: #333;
-    border: 1px solid #444;
+    background-color: #4389ca;
+    border: 1px solid #4389ca;
 }
 
 QListWidget::item {
-    background-color: #3a3a3a;
-    color: white;
+    background-color: #4389ca;
+    color: #4389ca;
 }
 
 QListWidget::item:selected {
-    background-color: #555;
+    background-color: #4389ca;
 }

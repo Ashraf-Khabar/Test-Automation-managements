@@ -3,10 +3,11 @@ import os
 import subprocess
 from robot.api import ExecutionResult
 from PyQt6.QtWidgets import (QApplication, QWidget, QVBoxLayout, QPushButton, QFileDialog,
-                             QLabel, QListWidget, QListWidgetItem, QHBoxLayout, QFrame, QCheckBox)
+                            QLabel, QListWidget, QListWidgetItem, QHBoxLayout, QFrame, QCheckBox)
 from PyQt6.QtCore import Qt, QPoint, QTimer
 from PyQt6.QtGui import QPixmap
 from PyQt6.QtWidgets import QApplication, QSpinBox
+from PyQt6 import QtCore
 
 class RobotTestRunner(QWidget):
     def __init__(self):
@@ -16,13 +17,25 @@ class RobotTestRunner(QWidget):
         self.logo_label = None
         self.show_logo()
 
+    def resource_path(self, relative_path):
+        """Récupérer le chemin d'accès aux ressources (image, fichiers) dans l'exécutable."""
+        try:
+            base_path = sys._MEIPASS
+        except Exception:
+
+            base_path = os.path.dirname(__file__)
+        return os.path.join(base_path, relative_path)
+
     def show_logo(self):
         self.logo_label = QLabel(self)
-        logo_pixmap = QPixmap("./images/Logo.png")
+        
+        logo_path = self.resource_path("images/Logo.png")
+        
+        logo_pixmap = QPixmap(logo_path)
         self.logo_label.setPixmap(logo_pixmap)
         self.logo_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.logo_label.setGeometry(self.rect()) 
         
+        self.logo_label.setGeometry(self.rect()) 
         self.logo_label.show()
 
         QTimer.singleShot(4000, self.hide_logo)
@@ -48,7 +61,7 @@ class RobotTestRunner(QWidget):
         self.titleBarLayout.addWidget(self.titleLabel)
         self.titleBarLayout.addStretch()
         
-        self.minimizeButton = QPushButton("--")
+        self.minimizeButton = QPushButton("-")
         self.closeButton = QPushButton("X")
         
         self.minimizeButton.setFixedSize(30, 30)
@@ -69,10 +82,20 @@ class RobotTestRunner(QWidget):
         self.selectButton = QPushButton("Sélectionner un dossier")
         self.selectButton.clicked.connect(self.select_directory)
         self.layout.addWidget(self.selectButton)
-        
+
+        # Modif
+        self.layoutHorizantal = QHBoxLayout()
         self.selectAllCheckBox = QCheckBox("Sélectionner tous les tests")
         self.selectAllCheckBox.stateChanged.connect(self.toggle_select_all_tests)
-        self.layout.addWidget(self.selectAllCheckBox)
+        self.layoutHorizantal.addWidget(self.selectAllCheckBox)
+
+        self.refreshButton = QPushButton("Refresh tests")
+        self.refreshButton.setFixedSize(QtCore.QSize(100, 40))
+        self.refreshButton.clicked.connect(self.load_tests)
+        self.layoutHorizantal.addWidget(self.refreshButton)
+        
+        self.layout.addItem(self.layoutHorizantal)
+        # modif
         
         self.testList = QListWidget()
         self.layout.addWidget(self.testList)
@@ -83,7 +106,7 @@ class RobotTestRunner(QWidget):
         self.processInput = QSpinBox()
         self.processInput.setValue(2)
         self.processInput.setFixedWidth(50)
-        self.processInput.setMinimum(0)
+        self.processInput.setMinimum(2)
         self.processInput.setMaximum(50)
         paramLayout.addWidget(self.processLabel)
         paramLayout.addWidget(self.processInput)
@@ -110,6 +133,11 @@ class RobotTestRunner(QWidget):
         self.logButton = QPushButton("Ouvrir le log")
         self.logButton.clicked.connect(self.open_log)
         self.layout.addWidget(self.logButton)
+
+        self.version_layout = QVBoxLayout()
+        self.version = QLabel("Robot Runner v 1.0.0")
+        self.version_layout.addWidget(self.version)
+        self.layout.addLayout(self.version_layout)
         
         self.setLayout(self.layout)
         self.setWindowTitle("Robot Framework Test Runner")
@@ -119,7 +147,8 @@ class RobotTestRunner(QWidget):
         self.output_directory = ""
     
     def apply_styles(self):
-        style_file = os.path.abspath("./style/style.qss")
+        style_file = self.resource_path("style/style.qss")
+        
         if os.path.exists(style_file):
             with open(style_file, "r") as file:
                 self.setStyleSheet(file.read())
@@ -129,10 +158,8 @@ class RobotTestRunner(QWidget):
         if dir_path:
             self.test_directory = dir_path
             self.label.setText(f"Sélectionné : {dir_path}")
-            
             self.output_directory = os.path.join(dir_path, "Results")
             os.makedirs(self.output_directory, exist_ok=True)
-            
             self.load_tests()
     
     def select_output_directory(self):
@@ -151,7 +178,8 @@ class RobotTestRunner(QWidget):
                     self.testList.addItem(item)
     
     def toggle_select_all_tests(self, state):
-        check_state = Qt.CheckState.Checked if state == Qt.CheckState.Checked else Qt.CheckState.Unchecked
+        check_state = Qt.CheckState.Checked if state == QtCore.Qt.CheckState.Checked.value else Qt.CheckState.Unchecked
+
         for i in range(self.testList.count()):
             self.testList.item(i).setCheckState(check_state)
     

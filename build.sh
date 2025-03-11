@@ -22,15 +22,12 @@ else
 fi
 
 echo "Génération de l'exécutable..."
-pyinstaller --noconfirm --onefile --windowed \
-    --name "$EXEC_NAME" \
-    --add-data "style/style.qss${SEP}style" \
-    --add-data "images/Logo.png${SEP}images" \
-    main.py
+pyinstaller --onefile --add-data "images/Logo.png;images" --add-data "style/style.qss;style" --icon=images/Logo.ico main.py
+
 
 if [ -f "dist/$EXEC_NAME" ] || [ -f "dist/$EXEC_NAME.exe" ]; then
-    echo "L'exécutable a été généré avec succès dans le dossier 'dist/' 🎉"
+    echo "L'exécutable a été généré avec succès dans le dossier 'dist/'"
 else
-    echo "Erreur lors de la génération de l'exécutable ❌"
+    echo "Erreur lors de la génération de l'exécutable"
     exit 1
 fi
