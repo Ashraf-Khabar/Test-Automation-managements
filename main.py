@@ -80,16 +80,16 @@ class RobotTestRunner(QWidget):
         self.titleBar.addWidget(self.titleBarWidget)
         self.layout.addLayout(self.titleBar)
         
-        self.label = QLabel("Sélectionnez un dossier contenant des fichiers .robot")
+        self.label = QLabel("Select a folder containing .robot files")
         self.layout.addWidget(self.label)
         
-        self.selectButton = QPushButton("Sélectionner un dossier")
+        self.selectButton = QPushButton("Select Folder")
         self.selectButton.clicked.connect(self.select_directory)
         self.layout.addWidget(self.selectButton)
 
         self.layoutHorizantal = QHBoxLayout()
 
-        self.selectAllCheckBox = QCheckBox("Sélectionner tous les tests")
+        self.selectAllCheckBox = QCheckBox("Select all tests")
         self.selectAllCheckBox.stateChanged.connect(self.toggle_select_all_tests)
         self.layoutHorizantal.addWidget(self.selectAllCheckBox)
 
@@ -113,7 +113,7 @@ class RobotTestRunner(QWidget):
         
         paramLayout = QHBoxLayout()
         
-        self.processLabel = QLabel("Nombre de subprocess :")
+        self.processLabel = QLabel("Number of subprocesses :")
         self.processInput = QSpinBox()
         self.processInput.setValue(2)
         self.processInput.setFixedWidth(50)
@@ -123,11 +123,11 @@ class RobotTestRunner(QWidget):
         paramLayout.addWidget(self.processInput)
         self.layout.addLayout(paramLayout)
         
-        self.fileLabel = QLabel("Sélectionner emplacement des résultats :")
+        self.fileLabel = QLabel("Select result storage location :")
         self.fileButton = QPushButton("Choisir dossier")
         self.fileButton.clicked.connect(self.select_output_directory)
         
-        self.clearButton = QPushButton("Vider les résultats")
+        self.clearButton = QPushButton("Clear results")
         self.clearButton.clicked.connect(self.clear_results_directory)
 
         fileLayout = QHBoxLayout()
@@ -138,18 +138,18 @@ class RobotTestRunner(QWidget):
         self.layout.addLayout(fileLayout)        
 
 
-        self.runButton = QPushButton("Exécuter les tests sélectionnés")
+        self.runButton = QPushButton("Run selected tests")
         self.runButton.clicked.connect(self.run_tests)
         self.layout.addWidget(self.runButton)
         
-        self.resultLabel = QLabel("Résultats des tests :")
+        self.resultLabel = QLabel("Test Results :")
         self.layout.addWidget(self.resultLabel)
         
-        self.reportButton = QPushButton("Ouvrir le rapport")
+        self.reportButton = QPushButton("Open Report")
         self.reportButton.clicked.connect(self.open_report)
         self.layout.addWidget(self.reportButton)
         
-        self.logButton = QPushButton("Ouvrir le log")
+        self.logButton = QPushButton("Open Log")
         self.logButton.clicked.connect(self.open_log)
         self.layout.addWidget(self.logButton)
 
@@ -241,13 +241,13 @@ class RobotTestRunner(QWidget):
     def run_tests(self):
         if not self.test_directory:
             self.resultLabel.setStyleSheet("color: none")
-            self.resultLabel.setText("Veuillez sélectionner un dossier.")
+            self.resultLabel.setText("Please select a folder.")
             self.resultLabel.setStyleSheet("color: #ad402a")
             return
         
         if not self.output_directory:
             self.resultLabel.setStyleSheet("color: none")
-            self.resultLabel.setText("Veuillez sélectionner un emplacement pour les résultats.")
+            self.resultLabel.setText("Please select a location for the results.")
             self.resultLabel.setStyleSheet("color: #ad402a") 
             return 
         
@@ -257,7 +257,7 @@ class RobotTestRunner(QWidget):
         
         if not selected_tests:
             self.resultLabel.setStyleSheet("color: none")
-            self.resultLabel.setText("Veuillez sélectionner au moins un test.")
+            self.resultLabel.setText("Please select at least one test.")
             self.resultLabel.setStyleSheet("color: #ad402a")
             return
         
@@ -277,11 +277,11 @@ class RobotTestRunner(QWidget):
          
         if result.suite.statistics.failed >= 1:
             self.resultLabel.setStyleSheet("color: none")
-            self.resultLabel.setText(f"Total: {result.suite.statistics.total} | Passés: {result.suite.statistics.passed} | Échoués: {result.suite.statistics.failed}")
+            self.resultLabel.setText(f"TOTAL: {result.suite.statistics.total} | PASS: {result.suite.statistics.passed} | FAIL: {result.suite.statistics.failed}")
             self.resultLabel.setStyleSheet("color: #ad402a")
         else:
             self.resultLabel.setStyleSheet("color: none")
-            self.resultLabel.setText(f"Total: {result.suite.statistics.total} | Passés: {result.suite.statistics.passed} | Échoués: {result.suite.statistics.failed}")
+            self.resultLabel.setText(f"TOTAL: {result.suite.statistics.total} | PASS: {result.suite.statistics.passed} | FAIL: {result.suite.statistics.failed}")
             self.resultLabel.setStyleSheet("color: green")
 
     def open_report(self):
@@ -314,14 +314,14 @@ class RobotTestRunner(QWidget):
                     elif os.path.isdir(file_path):
                         shutil.rmtree(file_path)
                 except Exception as e:
-                    self.resultLabel.setText(f"Erreur de suppression : {str(e)}")
+                    self.resultLabel.setText(f"Deletion error : {str(e)}")
                     self.resultLabel.setStyleSheet("color: #ad402a")
                     return
             
-            self.resultLabel.setText("Le dossier Results a été vidé.")
+            self.resultLabel.setText("The Results folder has been emptied")
             self.resultLabel.setStyleSheet("color: green")
         else:
-            self.resultLabel.setText("Aucun dossier Results trouvé.")
+            self.resultLabel.setText("No Results folder found")
             self.resultLabel.setStyleSheet("color: #ad402a")
 
 if __name__ == "__main__":
