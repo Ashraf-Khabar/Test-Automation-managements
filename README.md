@@ -17,7 +17,6 @@ A simple GUI tool to run and manage Robot Framework test suites. It provides a u
     - [Steps to Build the Executable using a pre-build script shell](#steps-to-build-the-executable-using-a-pre-build-script-shell)
     - [Steps to Build the Executable](#steps-to-build-the-executable)
   - [Contributing](#contributing)
-  - [Contributing](#contributing-1)
 
 ## Installation
 
@@ -137,17 +136,6 @@ In order to generate the executable `exe` file you just need to run the script :
 
     Make sure to adjust paths as needed for your project structure.
 
-## Contributing
-
-We welcome contributions! Here’s how you can get involved:
-
-1. **Fork the Repository**  
-   Visit the repository and click the Fork button at the top-right of the page to create your own copy of the repository.
-
-2. **Clone Your Fork**  
-   ```bash
-   git clone https://github.com/your-username/robot-runner.git
-   cd robot-runner
 ## Contributing
 
 We welcome contributions! Here’s how you can get involved:
