@@ -1,6 +1,3 @@
-# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
-
 name: Python package
 
 on:
@@ -25,11 +22,13 @@ jobs:
         uses: actions/setup-python@v3
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Run unit tests for robot runner
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          python -m unittest Tests/unit_tests.py
+          pip install robotframework  # Ajouté
+      - name: Run unit tests for robot runner
+        run: python -m unittest discover -s testsForTesting -p "*.py"  # Correction du chemin
 
   build:
     runs-on: ubuntu-latest
@@ -49,10 +48,11 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-
+        pip install robotframework  # Ajouté pour éviter des erreurs
 
   deploy:
     runs-on: ubuntu-latest
+    needs: [tests, build]  # On déploie seulement si les tests passent
     strategy:
       fail-fast: false
       matrix:
@@ -70,5 +70,10 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          sudo apt-get install bash
+          pip install robotframework  # Ajouté pour éviter des erreurs
+      - name: Give execute permission to build.sh
+        run: chmod +x build.sh  # Ajouté pour éviter les erreurs
+      - name: Run build script
+        run: |
+          set -e
           bash ./build.sh
