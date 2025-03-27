@@ -1,5 +1,4 @@
 PyQt6
 robotframework
 robotframework-pabot
-pytest 
-pytest-qt
+pytest

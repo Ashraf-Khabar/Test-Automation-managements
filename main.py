@@ -14,6 +14,7 @@ from PyQt6.QtGui import QMovie
 class RobotTestRunner(QWidget):
     def __init__(self):
         super().__init__()
+        self.version_label = "© Robot Runner v 1.5.0"
         self.initUI()
         self.drag_position = QPoint()
         self.logo_label = None
@@ -22,10 +23,8 @@ class RobotTestRunner(QWidget):
     def resource_path(self, relative_path):
         """Récupérer le chemin d'accès aux ressources (image, fichiers) dans l'exécutable."""
         try:
-            # Si l'application est exécutée depuis un fichier exécutable PyInstaller
             base_path = sys._MEIPASS
         except Exception:
-            # Si l'application est en mode script
             base_path = os.path.dirname(__file__)
         return os.path.join(base_path, relative_path)
 
@@ -34,7 +33,7 @@ class RobotTestRunner(QWidget):
         
         logo_path = self.resource_path("images/Logo.png")
         logo_pixmap = QPixmap(logo_path)
-        logo_pixmap.setDevicePixelRatio(14)
+
         self.logo_label.setPixmap(logo_pixmap)
         self.logo_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         
@@ -50,6 +49,7 @@ class RobotTestRunner(QWidget):
     def initUI(self):
         self.setWindowFlags(Qt.WindowType.FramelessWindowHint)
         self.setFixedSize(1100, 650)
+        self.setStyleSheet("border-radius: 10px")
         
         self.layout = QVBoxLayout()
         
@@ -87,34 +87,27 @@ class RobotTestRunner(QWidget):
         self.selectButton.clicked.connect(self.select_directory)
         self.layout.addWidget(self.selectButton)
 
-        # Modif
         self.layoutHorizantal = QHBoxLayout()
 
-        # Checkbox pour sélectionner tous les tests
         self.selectAllCheckBox = QCheckBox("Sélectionner tous les tests")
         self.selectAllCheckBox.stateChanged.connect(self.toggle_select_all_tests)
         self.layoutHorizantal.addWidget(self.selectAllCheckBox)
 
-        # Conteneur horizontal pour aligner le bouton Refresh et l'animation
         self.refreshLayout = QHBoxLayout()
 
-        # Bouton de rafraîchissement
         self.refreshButton = QPushButton("Refresh tests")
         self.refreshButton.setFixedSize(QtCore.QSize(100, 40))
         self.refreshButton.clicked.connect(self.load_tests)
         self.refreshLayout.addWidget(self.refreshButton)
 
-        # Label pour le GIF de chargement / checkmark
         self.loadingLabel = QLabel()
-        self.loadingLabel.setFixedSize(30, 30)  # Taille uniforme pour le GIF et le checkmark
-        self.loadingLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)  # Centrage du contenu
+        self.loadingLabel.setFixedSize(30, 30) 
+        self.loadingLabel.setAlignment(Qt.AlignmentFlag.AlignCenter) 
         self.refreshLayout.addWidget(self.loadingLabel)
 
-        # Ajout du layout contenant Refresh + Loading à la mise en page principale
         self.layoutHorizantal.addLayout(self.refreshLayout)
         self.layout.addItem(self.layoutHorizantal)
 
-        # modif 
         self.testList = QListWidget()
         self.layout.addWidget(self.testList)
         
@@ -129,8 +122,7 @@ class RobotTestRunner(QWidget):
         paramLayout.addWidget(self.processLabel)
         paramLayout.addWidget(self.processInput)
         self.layout.addLayout(paramLayout)
-
-        # Sélection du dossier de résultats + Vider les résultats
+        
         self.fileLabel = QLabel("Sélectionner emplacement des résultats :")
         self.fileButton = QPushButton("Choisir dossier")
         self.fileButton.clicked.connect(self.select_output_directory)
@@ -162,7 +154,7 @@ class RobotTestRunner(QWidget):
         self.layout.addWidget(self.logButton)
 
         self.version_layout = QVBoxLayout()
-        self.version = QLabel("© Robot Runner v 1.5.0")
+        self.version = QLabel(f"{self.version_label}")
         self.version_layout.addWidget(self.version)
         self.layout.addLayout(self.version_layout)
         
@@ -185,67 +177,62 @@ class RobotTestRunner(QWidget):
         if dir_path:
             self.test_directory = dir_path
             self.label.setText(f"Sélectionné : {dir_path}")
-            self.label.setStyleSheet("color: #2964a3")
             
-            self.output_directory = os.path.join(dir_path, "Results")
-            os.makedirs(self.output_directory, exist_ok=True)
+            os.path.join(dir_path, "Results")
+            os.makedirs(os.path.join(dir_path, "Results"), exist_ok=True)
 
-            self.testList.clear()  # Clear old tests before loading new ones
-            self.load_tests()  # Load tests and show cross if empty
+            self.testList.clear() 
+            self.load_tests()
         else:
-            self.show_cross()  # If no folder selected, show red X
+            self.show_cross()
+            self.label.setStyleSheet("color: #ad402a")
     
     def select_output_directory(self):
         dir_path = QFileDialog.getExistingDirectory(self, "Sélectionner un dossier de résultats")
         if dir_path:
             self.output_directory = dir_path
             self.fileLabel.setText(f"Résultats enregistrés dans : {dir_path}")
-            self.fileLabel.setStyleSheet("color: #2964a3")
+            self.fileLabel.setStyleSheet("color: green")
     
     def show_cross(self):
         cross_icon_path = self.resource_path("images/cross.png")
-        cross_pixmap = QPixmap(cross_icon_path).scaled(25, 25, QtCore.Qt.AspectRatioMode.KeepAspectRatio)
+        cross_pixmap = QPixmap(cross_icon_path).scaled(20, 20, QtCore.Qt.AspectRatioMode.KeepAspectRatio)
         self.loadingLabel.setPixmap(cross_pixmap)
         self.loadingLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-    
     def populate_tests(self):
         self.loading_movie.stop()
         self.loadingLabel.clear()
 
         if self.test_directory:
-            # Get test files
+
             test_files = [file for file in os.listdir(self.test_directory) if file.endswith(".robot")]
 
             if not test_files:
-                self.show_cross()  # Show red X if no tests
+                self.show_cross()
+                self.label.setStyleSheet("color: #ad402a")
             else:
                 for file in test_files:
                     item = QListWidgetItem(file)
                     item.setCheckState(Qt.CheckState.Unchecked)
                     self.testList.addItem(item)
 
-                # Show checkmark if tests are found
+                self.label.setStyleSheet("color: green")
                 check_icon_path = self.resource_path("images/check.png")
-                check_pixmap = QPixmap(check_icon_path).scaled(20, 20, QtCore.Qt.AspectRatioMode.KeepAspectRatio)
+                check_pixmap = QPixmap(check_icon_path).scaled(27, 27, QtCore.Qt.AspectRatioMode.KeepAspectRatio)
                 self.loadingLabel.setPixmap(check_pixmap)
                 self.loadingLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
-
     
     def load_tests(self):
         self.testList.clear()
         self.loadingLabel.show()
-        # Load animation GIF
         loading_gif_path = self.resource_path("images/loading.gif")
         self.loading_movie = QMovie(loading_gif_path)
         self.loading_movie.setScaledSize(QtCore.QSize(45, 45))
         self.loadingLabel.setMovie(self.loading_movie)
         self.loading_movie.start()
-        # Delay for animation before checking for tests
         QtCore.QTimer.singleShot(1500, self.populate_tests)
 
-
-    
     def toggle_select_all_tests(self, state):
         check_state = Qt.CheckState.Checked if state == QtCore.Qt.CheckState.Checked.value else Qt.CheckState.Unchecked
         for i in range(self.testList.count()):
@@ -255,14 +242,14 @@ class RobotTestRunner(QWidget):
         if not self.test_directory:
             self.resultLabel.setStyleSheet("color: none")
             self.resultLabel.setText("Veuillez sélectionner un dossier.")
-            self.resultLabel.setStyleSheet("color: #ad402a; font: bold")
+            self.resultLabel.setStyleSheet("color: #ad402a")
             return
         
         if not self.output_directory:
             self.resultLabel.setStyleSheet("color: none")
             self.resultLabel.setText("Veuillez sélectionner un emplacement pour les résultats.")
-            self.resultLabel.setStyleSheet("color: #ad402a; font: bold") 
-            return
+            self.resultLabel.setStyleSheet("color: #ad402a") 
+            return 
         
         selected_tests = [os.path.join(self.test_directory, self.testList.item(i).text())
                          for i in range(self.testList.count())
@@ -271,11 +258,11 @@ class RobotTestRunner(QWidget):
         if not selected_tests:
             self.resultLabel.setStyleSheet("color: none")
             self.resultLabel.setText("Veuillez sélectionner au moins un test.")
-            self.resultLabel.setStyleSheet("color: #ad402a; font: bold")
+            self.resultLabel.setStyleSheet("color: #ad402a")
             return
         
         num_processes = self.processInput.text()
-        repport_title = "GTT Tests Autos"
+        repport_title = "Robot Runner - Tests Autos"
 
         if num_processes == 1:
             command = ["robot", "-d", self.output_directory] + selected_tests            
@@ -291,11 +278,11 @@ class RobotTestRunner(QWidget):
         if result.suite.statistics.failed >= 1:
             self.resultLabel.setStyleSheet("color: none")
             self.resultLabel.setText(f"Total: {result.suite.statistics.total} | Passés: {result.suite.statistics.passed} | Échoués: {result.suite.statistics.failed}")
-            self.resultLabel.setStyleSheet("color: #ad402a; font: bold")
+            self.resultLabel.setStyleSheet("color: #ad402a")
         else:
             self.resultLabel.setStyleSheet("color: none")
             self.resultLabel.setText(f"Total: {result.suite.statistics.total} | Passés: {result.suite.statistics.passed} | Échoués: {result.suite.statistics.failed}")
-            self.resultLabel.setStyleSheet("color: green; font: bold")
+            self.resultLabel.setStyleSheet("color: green")
 
     def open_report(self):
         report_path = os.path.join(self.output_directory, "report.html")
@@ -328,14 +315,14 @@ class RobotTestRunner(QWidget):
                         shutil.rmtree(file_path)
                 except Exception as e:
                     self.resultLabel.setText(f"Erreur de suppression : {str(e)}")
-                    self.resultLabel.setStyleSheet("color: #ad402a; font: bold")
+                    self.resultLabel.setStyleSheet("color: #ad402a")
                     return
             
             self.resultLabel.setText("Le dossier Results a été vidé.")
-            self.resultLabel.setStyleSheet("color: green; font: bold")
+            self.resultLabel.setStyleSheet("color: green")
         else:
             self.resultLabel.setText("Aucun dossier Results trouvé.")
-            self.resultLabel.setStyleSheet("color: #ad402a; font: bold")
+            self.resultLabel.setStyleSheet("color: #ad402a")
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

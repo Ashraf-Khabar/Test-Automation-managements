@@ -6,7 +6,6 @@ from main import RobotTestRunner
 
 app = QApplication([])  
 
-
 class TestRobotTestRunner(unittest.TestCase):
     
     def setUp(self):

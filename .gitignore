@@ -1,12 +1,12 @@
 build
 RobotTestRunner.spec
 
-testsForTesting/*.log
-testsForTesting/*.xml
-testsForTesting/*.html
+tests-for-validation/*.log
+tests-for-validation/*.xml
+tests-for-validation/*.html
 
-testsForTesting/results
-testsForTesting/.pabotsuitenames
-testsForTesting/pabot_results
+tests-for-validation/results
+tests-for-validation/.pabotsuitenames
+tests-for-validation/pabot_results
 
 controllers/__pycache__
