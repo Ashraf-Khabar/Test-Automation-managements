@@ -2,7 +2,7 @@
 
 A simple GUI tool to run and manage Robot Framework test suites. It provides a user-friendly interface for selecting test files, running them in parallel, and viewing results.
 <center>
-<img src="./images/logo.png" height="250"></img>
+<img src="./images/Logo.png" height="250"></img>
 </center>
 
 ## Table of Contents
