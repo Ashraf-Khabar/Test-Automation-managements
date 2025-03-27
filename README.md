@@ -14,6 +14,7 @@ A simple GUI tool to run and manage Robot Framework test suites. It provides a u
   - [Building the Application](#building-the-application)
     - [Steps to Build](#steps-to-build)
   - [Building an Executable](#building-an-executable)
+    - [Steps to Build the Executable using a pre-build script shell](#steps-to-build-the-executable-using-a-pre-build-script-shell)
     - [Steps to Build the Executable](#steps-to-build-the-executable)
   - [Contributing](#contributing)
   - [Contributing](#contributing-1)
@@ -93,6 +94,19 @@ If you'd like to modify and build the application from source, follow these step
 ## Building an Executable
 
 If you need to distribute the application to users without requiring them to install Python, you can build a standalone .exe file (for Windows) using PyInstaller.
+
+### Steps to Build the Executable using a pre-build script shell
+In order to generate the executable `exe` file you just need to run the script :
+
+1. For Linux:
+    ```bash
+    sudo apt get bash
+    bash ./build.sh
+    ```
+2. For windows:
+    ```bash
+    ./build.sh
+    ```
 
 ### Steps to Build the Executable
 
