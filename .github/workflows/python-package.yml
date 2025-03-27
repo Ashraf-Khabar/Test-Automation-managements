@@ -28,7 +28,7 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           pip install robotframework  # Ajouté
       - name: Run unit tests for robot runner
-        run: python -m unittest discover -s tests -p "*.py"
+        run: python -m unittest tests/unit_tests.py
 
   build:
     runs-on: ubuntu-latest
