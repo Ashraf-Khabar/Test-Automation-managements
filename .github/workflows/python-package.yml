@@ -7,7 +7,6 @@ on:
     branches: [ "main" ]
 
 jobs:
-
   tests:
     runs-on: ubuntu-latest
     strategy:
@@ -16,19 +15,27 @@ jobs:
         python-version: ["3.9", "3.10", "3.11"]
     steps:
       - uses: actions/checkout@v4
+      
       - name: Install system dependencies
-        run: sudo apt-get update && sudo apt-get install -y libegl1 libopengl0
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libegl1 libopengl0 libxcb-cursor0 libxkbcommon-x11-0
+          
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v3
         with:
           python-version: ${{ matrix.python-version }}
+      
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          pip install robotframework  # Ajouté
+          pip install robotframework  # Added to prevent errors
+
       - name: Run unit tests for robot runner
-        run: python -m unittest Tests/unit_tests.py
+        run: |
+          export QT_QPA_PLATFORM=offscreen  # Prevents GUI errors
+          python -m unittest discover -s tests -p "*.py"
 
   build:
     runs-on: ubuntu-latest
@@ -38,17 +45,19 @@ jobs:
         python-version: ["3.9", "3.10", "3.11"]
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v3
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        python -m pip install flake8 pytest
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-        pip install robotframework  # Ajouté pour éviter des erreurs
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install flake8 pytest
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install robotframework  # Added to prevent errors
 
   deploy:
     runs-on: ubuntu-latest
@@ -57,22 +66,29 @@ jobs:
       fail-fast: false
       matrix:
         python-version: ["3.9", "3.10", "3.11"]
-  
+
     steps:
       - uses: actions/checkout@v4
+      
       - name: Install system dependencies
-        run: sudo apt-get update && sudo apt-get install -y libegl1 libopengl0
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libegl1 libopengl0 libxcb-cursor0 libxkbcommon-x11-0
+          
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v3
         with:
           python-version: ${{ matrix.python-version }}
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          pip install robotframework  # Ajouté pour éviter des erreurs
+          pip install robotframework  # Added to prevent errors
+      
       - name: Give execute permission to build.sh
         run: chmod +x build.sh
+
       - name: Run build script
         run: |
           set -e
