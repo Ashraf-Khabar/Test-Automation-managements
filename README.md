@@ -131,7 +131,7 @@ In order to generate the executable `exe` file you just need to run the script :
 3. (Optional) If you want to package the .exe with additional resources (e.g., icons, images), you can modify the PyInstaller command to include them:
 
     ```bash
-    pyinstaller --onefile --windowed --add-data "images/*;images" main.py
+    pyinstaller --onefile --windowed --add-data "./style/style.qss;style" --add-data "images/*;images" main.py
     ```
 
     Make sure to adjust paths as needed for your project structure.
